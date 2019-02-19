@@ -32,7 +32,19 @@ print(interpSearch(items, 19))
 # *** simplified speed test ***
 from datetime import datetime
 
-items = range[0, 1000000]
+items = range(0, 1000000)
 count = 100
+
+start = datetime.now()
+
+for i in range(1, count):
+    result = interpSearch(items, 777777)
+    print(result)
+
+delta = datetime.now() - start
+totalMicroseconds = delta.seconds*1000000 + delta.microseconds
+
+print(totalMicroseconds / count)
+
 
 
